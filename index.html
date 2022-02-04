@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="fade" class="fadebox"></div>
+    <div id="fade" class="fadebox" onclick="cancelHover()"></div>
     <header>
         <nav>
             <img src="./Digifianz-Logo.svg" alt="">
@@ -51,10 +51,12 @@
                 </div>
             </div>         
         </div>
-                    
-            <div class="Rectangle2">
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lorem eget tellus vehicula dignissim. Cras ac ex a odio faucibus fermentum. Cras gravida urna eget nunc pellentesque, et lobortis sapien maximus. Nulla interdum ex lorem, non porta urna pharetra ac. Nulla risus nisl, dictum vitae volutpat sed, egestas ut nulla. In sagittis ante odio.<br><br>Praesent sit amet nibh aliquam, molestie ipsum non, volutpat nisl. Phasellus a eleifend libero. Sed imperdiet, elit quis porttitor ullamcorper, purus justo malesuada tortor, at pretium est ipsum in velit. Suspendisse id aliquam sem. Proin non diam ligula. </p>
+            <div class="label">
+                <div class="Rectangle2">
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lorem eget tellus vehicula dignissim. Cras ac ex a odio faucibus fermentum. Cras gravida urna eget nunc pellentesque, et lobortis sapien maximus. Nulla interdum ex lorem, non porta urna pharetra ac. Nulla risus nisl, dictum vitae volutpat sed, egestas ut nulla. In sagittis ante odio.<br><br>Praesent sit amet nibh aliquam, molestie ipsum non, volutpat nisl. Phasellus a eleifend libero. Sed imperdiet, elit quis porttitor ullamcorper, purus justo malesuada tortor, at pretium est ipsum in velit. Suspendisse id aliquam sem. Proin non diam ligula. </p>  
+            </div>   
+            
     </main>
 
     <div class="Rectangle4">
@@ -76,9 +78,9 @@
     </footer>    
     
     <div class="caja_popup" id="form_popup">
-        <div class="Rectangle4_pop">
+        <div class="Rectangle4_pop" onclick="cancelHover()">
             <button class="nav-toggle_cerrar_pop" onclick="cancelarform()" aria-label="Cerrar menú">
-                <img src="./close_24px.svg" alt="">
+                <img class="cerrar_img" src="./close_24px.svg" alt="">
             </button>
             <form action="#">
                 <h4>Formulario</h4>

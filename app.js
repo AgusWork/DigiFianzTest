@@ -6,7 +6,7 @@ const empBtn2 = document.querySelector(".Empty-button-white_2");
 const navMenu = document.querySelector(".nav-menu");
 const body = document.querySelector("body");
 const fade = document.querySelector('#fade');
-const closePopUp = document.querySelector(".nav-toggle_cerrar_pop");
+const closePopUp = document.querySelector(".cerrar_img");
 let container = document.querySelector('.cards-container');
 let slider = document.querySelector('.slider');
 let formPopup = document.querySelector("#form_popup");
@@ -17,43 +17,43 @@ let startx;
 let x;
 /*--------------------------------------------------------   Funcionalidad Slider    ------------------------------------------------------------*/
 
-// container.addEventListener('touchdown', (e)=> {
-//   pressed = true;
-//   startx = e.offsetX - slider.offsetLeft;
-//   if (innerWidth < 770 ) {
-//       container.style.cursor = 'grabbing';
-//   } else{
-//     container.style.cursor = 'default';
-//   }
-// })
-// container.addEventListener('touchenter', (e)=> {
-//   if (innerWidth < 770 ) {
-//   container.style.cursor = 'grab';
-//     } else{
-//       container.style.cursor = 'default';
-//   }
-// })
+container.addEventListener('mousedown', (e)=> {
+  pressed = true;
+  startx = e.offsetX - slider.offsetLeft;
+  if (innerWidth < 770 ) {
+      container.style.cursor = 'grabbing';
+  } else{
+    container.style.cursor = 'default';
+  }
+})
+container.addEventListener('mouseenter', (e)=> {
+  if (innerWidth < 770 ) {
+  container.style.cursor = 'grab';
+    } else{
+      container.style.cursor = 'default';
+  }
+})
 
-// container.addEventListener('touchup', (e)=> {
-//   if (innerWidth < 770 ) {
-//   container.style.cursor = 'grab';
-// } else{
-//   container.style.cursor = 'default';
-// }
-// })
-// window.addEventListener('touchup', (e)=> {
-//   pressed = false;
-// })
-// container.addEventListener('touchmove', (e)=> {
-//     if (!pressed) return;
-//     e.preventDefault();
+container.addEventListener('mouseup', (e)=> {
+  if (innerWidth < 770 ) {
+  container.style.cursor = 'grab';
+} else{
+  container.style.cursor = 'default';
+}
+})
+window.addEventListener('mouseup', (e)=> {
+  pressed = false;
+})
+container.addEventListener('mousemove', (e)=> {
+    if (!pressed) return;
+    e.preventDefault();
       
-//     x = e.offsetX
+    x = e.offsetX
 
-//     slider.style.left = `${x - startx}px`;
-//     checkboundary()
+    slider.style.left = `${x - startx}px`;
+    checkboundary()
 
-// })
+})
 container.addEventListener('touchstart', (e) => {
   pressed = true;
   startx = e.targetTouches[0].clientX - slider.offsetLeft;
@@ -86,19 +86,38 @@ function abrirform() {
   formPopup.style.display = "block",
   fade.style.display='block',
   body.classList.toggle("body_modif")
-  }
-  window.addEventListener("DOMContentLoaded", () => {
-    if(formPopup.style.display !== "none") (function (){
-      window.addEventListener("click", () => { closePopUp.style.border = "none";
-    });
-    })();
-  });
 
+  }
+
+
+  function cancelHover() {
+    MotorFadeInFadeOut(closePopUp);
+
+}
+  function MotorFadeInFadeOut(){
+    FadeIn();  
+    window.setTimeout(function(){  
+    FadeOut();             
+    },320); 
+    }
+
+  function FadeIn(){
+      window.setTimeout(function(){
+        closePopUp.style.background = "rgba(71, 181, 255, 0.4)",
+        closePopUp.style.border = "4px solid rgba(71, 181, 255, 0.6)" }, 3)
+  }
+
+  
+  function FadeOut(){
+    window.setTimeout(function(){
+      closePopUp.style.background = "none",
+        closePopUp.style.border = "#FFF" }, 3)
+  }
 
   function cancelarform() {
-  document.getElementById("form_popup").style.display = "none",
+  formPopup.style.display = "none",
   body.classList.toggle("body_modif"),
-  document.getElementById('fade').style.display='none'
+  fade.style.display='none'
   }
 
   /*------------------------------------------------------   Funcionalidad NavMobile    ---------------------------------------------------------*/
@@ -115,7 +134,7 @@ navToggleAbr.addEventListener("click", () => {
 navToggleCerr.addEventListener("click", () => {
     navMenu.classList.toggle("nav-menu_visible"),
     body.classList.toggle("body_modif"),
-    document.getElementById('fade').style.display='none'
+    fade.style.display='none'
 
 });
 

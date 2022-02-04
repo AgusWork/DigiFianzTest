@@ -116,7 +116,6 @@ main{
     flex-direction: column;
     align-items: center;
     text-align: center;
-    flex-wrap: wrap;
 }
 main > .cards-container{
     display: flex;
@@ -153,7 +152,14 @@ main > .cards-container{
     height: 87px;   
     margin: 40px 40px 0px 40px;
 }
-main > p{
+.label{
+    display: flex;
+    justify-content: center;
+    text-align: left;
+    align-items: center;
+    flex-direction: row;
+}
+.label > p{
     font-size: 13px;
     line-height: 15px;
     width: 530px;
@@ -164,15 +170,17 @@ main > p{
     align-items: center;
     letter-spacing: -0.02em;
     top: 0; 
-    margin-top: 60px;
+    margin-left: 60px;
 }
 .Rectangle2{
     display: flex; 
     width: 362px;
     height: 362px;
     background-image:url(./Rectangle2.svg);
+    background-size: 100% 100%;     
+    background-repeat: no-repeat;
+    background-position: center;
     border-radius: 181px;
-    margin: 0 25% 0 25%;
 
 }
 /*---------------------------------------------------------------    Formulario     -------------------------------------------------------------*/
@@ -420,11 +428,14 @@ footer > img{
         width: 126px;
     }
     .card > p{
-        height: 87px;
-        
+        height: 87px;   
+    }
+    .label{
+        margin-top: 400px; 
+        flex-direction: column;
+        text-align: center;
     }
     .Rectangle2{ 
-        margin-top: 400px; 
         width: 234px;
         height: 234px;
         background-image:url(./Rectangle2.svg);
@@ -433,11 +444,11 @@ footer > img{
         background-position: center;
         border-radius: 181px;
     }
-    main > p{ 
+    .label > p{ 
         width:60%;
         height: 300px;
         text-align: center;
-        background-color: #222ebd; 
+        margin-right: 10%;
     }
     .Rectangle4 > form {
         width: 80%;
@@ -480,7 +491,4 @@ footer > img{
 	height: 100%;
 	background-color: rgba(0,0,0, 0.5);
 	z-index:1001;
-}
-.backgroundCancel{
-    background-color: rgba(2fffff 0.5);
 }
