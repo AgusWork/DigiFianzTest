@@ -7,6 +7,7 @@ const navMenu = document.querySelector(".nav-menu");
 const body = document.querySelector("body");
 const fade = document.querySelector('#fade');
 const closePopUp = document.querySelector(".cerrar_img");
+const closeNav = document.querySelector(".cerrar_nav");
 let container = document.querySelector('.cards-container');
 let slider = document.querySelector('.slider');
 let formPopup = document.querySelector("#form_popup");
@@ -92,26 +93,26 @@ function abrirform() {
 
   function cancelHover() {
     MotorFadeInFadeOut(closePopUp);
-
+    MotorFadeInFadeOut(closeNav);
 }
-  function MotorFadeInFadeOut(){
-    FadeIn();  
+  function MotorFadeInFadeOut(element){
+    FadeIn(element);  
     window.setTimeout(function(){  
-    FadeOut();             
+    FadeOut(element);             
     },320); 
     }
 
-  function FadeIn(){
+  function FadeIn(element){
       window.setTimeout(function(){
-        closePopUp.style.background = "rgba(71, 181, 255, 0.4)",
-        closePopUp.style.border = "4px solid rgba(71, 181, 255, 0.6)" }, 3)
+        element.style.background = "rgba(71, 181, 255, 0.4)",
+        element.style.border = "4px solid rgba(71, 181, 255, 0.6)" }, 3)
   }
 
   
-  function FadeOut(){
+  function FadeOut(element){
     window.setTimeout(function(){
-      closePopUp.style.background = "none",
-        closePopUp.style.border = "#FFF" }, 3)
+      element.style.background = "none",
+        element.style.border = "#FFF" }, 3)
   }
 
   function cancelarform() {
