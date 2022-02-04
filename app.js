@@ -17,43 +17,57 @@ let startx;
 let x;
 /*--------------------------------------------------------   Funcionalidad Slider    ------------------------------------------------------------*/
 
-container.addEventListener('touchdown', (e)=> {
-  pressed = true;
-  startx = e.offsetX - slider.offsetLeft;
-  if (innerWidth < 770 ) {
-      container.style.cursor = 'grabbing';
-  } else{
-    container.style.cursor = 'default';
-  }
-})
-container.addEventListener('touchenter', (e)=> {
-  if (innerWidth < 770 ) {
-  container.style.cursor = 'grab';
-    } else{
-      container.style.cursor = 'default';
-  }
-})
+// container.addEventListener('touchdown', (e)=> {
+//   pressed = true;
+//   startx = e.offsetX - slider.offsetLeft;
+//   if (innerWidth < 770 ) {
+//       container.style.cursor = 'grabbing';
+//   } else{
+//     container.style.cursor = 'default';
+//   }
+// })
+// container.addEventListener('touchenter', (e)=> {
+//   if (innerWidth < 770 ) {
+//   container.style.cursor = 'grab';
+//     } else{
+//       container.style.cursor = 'default';
+//   }
+// })
 
-container.addEventListener('touchup', (e)=> {
-  if (innerWidth < 770 ) {
-  container.style.cursor = 'grab';
-} else{
-  container.style.cursor = 'default';
-}
-})
-window.addEventListener('touchup', (e)=> {
-  pressed = false;
-})
-container.addEventListener('touchmove', (e)=> {
-    if (!pressed) return;
-    e.preventDefault();
+// container.addEventListener('touchup', (e)=> {
+//   if (innerWidth < 770 ) {
+//   container.style.cursor = 'grab';
+// } else{
+//   container.style.cursor = 'default';
+// }
+// })
+// window.addEventListener('touchup', (e)=> {
+//   pressed = false;
+// })
+// container.addEventListener('touchmove', (e)=> {
+//     if (!pressed) return;
+//     e.preventDefault();
       
-    x = e.offsetX
+//     x = e.offsetX
 
-    slider.style.left = `${x - startx}px`;
-    checkboundary()
+//     slider.style.left = `${x - startx}px`;
+//     checkboundary()
 
-})
+// })
+container.addEventListener('touchstart', (e) => {
+  pressed = true;
+  startx = e.targetTouches[0].clientX - slider.offsetLeft;
+}, {passive: true});
+
+
+
+container.addEventListener('touchmove', (e) => {
+  if(!pressed) return;
+  x = e.targetTouches[0].clientX;
+
+  slider.style.left = `${x - startx}px`;  
+  checkboundary();
+}, {passive: true});
 
 function checkboundary(){
   let outer = container.getBoundingClientRect();
