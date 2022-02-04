@@ -437,6 +437,7 @@ footer > img{
         width:60%;
         height: 300px;
         text-align: center;
+        background-color: #AAA; 
     }
     .Rectangle4 > form {
         width: 80%;
@@ -480,18 +481,6 @@ footer > img{
 	background-color: rgba(0,0,0, 0.5);
 	z-index:1001;
 }
-
-/*---------------------------------------------------------------    Clases     ------------------------------------------------------------------*/
-
-.grabbing .card {
-    @media (max-width: 769px) {
-    transform: scale(0.9);
-    }
-}
-.grabbing{
-    @media (max-width: 769px) {
-        cursor: grabbing;
-        cursor: -moz-grabbing;
-        cursor: -webkit-grabbing;
-    }
+.backgroundCancel{
+    background-color: rgba(2fffff 0.5);
 }
