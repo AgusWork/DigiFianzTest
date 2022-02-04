@@ -6,8 +6,10 @@ const empBtn2 = document.querySelector(".Empty-button-white_2");
 const navMenu = document.querySelector(".nav-menu");
 const body = document.querySelector("body");
 const fade = document.querySelector('#fade');
+const closePopUp = document.querySelector(".nav-toggle_cerrar_pop");
 let container = document.querySelector('.cards-container');
 let slider = document.querySelector('.slider');
+let formPopup = document.querySelector("#form_popup");
 /*--------------------------------------------------------------   Variables    -----------------------------------------------------------------*/
 
 let pressed = false;
@@ -15,7 +17,7 @@ let startx;
 let x;
 /*--------------------------------------------------------   Funcionalidad Slider    ------------------------------------------------------------*/
 
-container.addEventListener('mousedown', (e)=> {
+container.addEventListener('touchdown', (e)=> {
   pressed = true;
   startx = e.offsetX - slider.offsetLeft;
   if (innerWidth < 770 ) {
@@ -24,7 +26,7 @@ container.addEventListener('mousedown', (e)=> {
     container.style.cursor = 'default';
   }
 })
-container.addEventListener('mouseenter', (e)=> {
+container.addEventListener('touchenter', (e)=> {
   if (innerWidth < 770 ) {
   container.style.cursor = 'grab';
     } else{
@@ -32,17 +34,17 @@ container.addEventListener('mouseenter', (e)=> {
   }
 })
 
-container.addEventListener('mouseup', (e)=> {
+container.addEventListener('touchup', (e)=> {
   if (innerWidth < 770 ) {
   container.style.cursor = 'grab';
 } else{
   container.style.cursor = 'default';
 }
 })
-window.addEventListener('mouseup', (e)=> {
+window.addEventListener('touchup', (e)=> {
   pressed = false;
 })
-container.addEventListener('mousemove', (e)=> {
+container.addEventListener('touchmove', (e)=> {
     if (!pressed) return;
     e.preventDefault();
       
@@ -67,14 +69,20 @@ function checkboundary(){
   /*--------------------------------------------------------   Funcionalidad PopUp    ------------------------------------------------------------*/
 
 function abrirform() {
-  document.getElementById("formrecuperar").style.display = "block",
+  formPopup.style.display = "block",
   fade.style.display='block',
   body.classList.toggle("body_modif")
-  
   }
+  window.addEventListener("DOMContentLoaded", () => {
+    if(formPopup.style.display !== "none") (function (){
+      window.addEventListener("click", () => { closePopUp.style.border = "none";
+    });
+    })();
+  });
+
 
   function cancelarform() {
-  document.getElementById("formrecuperar").style.display = "none",
+  document.getElementById("form_popup").style.display = "none",
   body.classList.toggle("body_modif"),
   document.getElementById('fade').style.display='none'
   }
