@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Work+Sans&display=swap" rel="stylesheet"><body>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Work+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
     <div id="fade" class="fadebox"></div>
     <header>
         <nav>
@@ -23,7 +25,7 @@
                         <p class="Item-menu_2">Item menu 2</p>
                         <p class="Item-menu_3">Item menu 3</p>  
                     </div>     
-                    <button class="Empty-button-white_1">¡Hace click aqui!</button>
+                    <button class="Empty-button-white_1" onclick="abrirform()">¡Hace click aqui!</button>
                     <button class="Empty-button-white_2">Button Text</button>
                 </div> 
         </nav>
@@ -34,20 +36,22 @@
 
     <main>
         <div class="cards-container">
-             <div class="card">
-                <div><img src="./Icon 1.svg" alt=""></div>
-                <p>Hace este ejercicio</p>
-            </div>
-            <div class="card">
-                <div><img src="./Icon 2.svg" alt=""></div>
-                <p>Lo evaluaremos con nuestro equipo</p>
-            </div>
-            <div class="card">
-                <div><img src="./Icon 3.svg" alt=""></div>
-                <p>Te sumas al equipo de Digifianz</p>
-            </div>
+            <div class="slider">
+                <div class="card">
+                    <div><img src="./Icon 1.svg" alt=""></div>
+                    <p>Hace este ejercicio</p>
+                </div>
+                <div class="card">
+                    <div><img src="./Icon 2.svg" alt=""></div>
+                    <p>Lo evaluaremos con nuestro equipo</p>
+                </div>
+                <div class="card">
+                    <div><img src="./Icon 3.svg" alt=""></div>
+                    <p>Te sumas al equipo de Digifianz</p>
+                </div>
+            </div>         
         </div>
-       
+                    
             <div class="Rectangle2">
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sed lorem eget tellus vehicula dignissim. Cras ac ex a odio faucibus fermentum. Cras gravida urna eget nunc pellentesque, et lobortis sapien maximus. Nulla interdum ex lorem, non porta urna pharetra ac. Nulla risus nisl, dictum vitae volutpat sed, egestas ut nulla. In sagittis ante odio.<br><br>Praesent sit amet nibh aliquam, molestie ipsum non, volutpat nisl. Phasellus a eleifend libero. Sed imperdiet, elit quis porttitor ullamcorper, purus justo malesuada tortor, at pretium est ipsum in velit. Suspendisse id aliquam sem. Proin non diam ligula. </p>
@@ -64,13 +68,32 @@
                 <input type="text" value="&nbsp;&nbsp;Nº de teléfono*">
                 <input type="text" value="&nbsp;&nbsp;País*">
             </div>
-            <input type="submit">
+            <input type="button" value="Enviar">
         </form>
     </div>
     <footer>
         <img src="./Digifianz-Logo.svg" alt="">
     </footer>    
     
+    <div class="caja_popup" id="formrecuperar">
+        <div class="Rectangle4_pop">
+            <button class="nav-toggle_cerrar_pop" onclick="cancelarform()" aria-label="Cerrar menú">
+                <img src="./close_24px.svg" alt="">
+            </button>
+            <form action="#">
+                <h4>Formulario</h4>
+                <div class="Labels">
+                    <input type="text" value="&nbsp;&nbsp;Nombre*">
+                    <input type="text" value="&nbsp;&nbsp;Apellido*">
+                    <input type="text" value="&nbsp;&nbsp;Nombre de la institución*">
+                    <input type="text" value="&nbsp;&nbsp;Correo electrónico*">
+                    <input type="text" value="&nbsp;&nbsp;Nº de teléfono*">
+                    <input type="text" value="&nbsp;&nbsp;País*">
+                </div>
+                <input type="button" value="Enviar">
+            </form>
+        </div>
+      </div>
     <script src="./app.js"></script>
 </body>
 </html>

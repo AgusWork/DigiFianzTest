@@ -69,7 +69,9 @@ nav > img{
     border-radius: 20px;
     background-color:#8B5FBF; 
     margin-left: 26px;
+    cursor: pointer;
 }
+
 .nav-menu > .Empty-button-white_2{
     color: #FFFFFF;
     width: 144px;
@@ -80,6 +82,8 @@ nav > img{
     background-color:#8B5FBF; 
     display: none;
 }
+/*---------------------------------------------------------------    Hero     -------------------------------------------------------------------*/
+
 .hero{
     width: 100%;
     height: 100%;
@@ -101,6 +105,7 @@ nav > img{
     color: #FFFFFF;
     width: 40%;
 }
+/*---------------------------------------------------------------    Main     -------------------------------------------------------------------*/
 
 main{
     width: 100%;
@@ -110,6 +115,7 @@ main{
     text-align: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     flex-wrap: wrap;
 }
 main > .cards-container{
@@ -117,6 +123,11 @@ main > .cards-container{
     justify-content: center;
     text-align: center;
     
+}
+.slider{
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .card{
     width: 205px;
@@ -164,6 +175,8 @@ main > p{
     margin: 0 25% 0 25%;
 
 }
+/*---------------------------------------------------------------    Formulario     -------------------------------------------------------------*/
+
 .Rectangle4{
     width: 100%;
     height: 652px;
@@ -172,9 +185,8 @@ main > p{
     justify-content: center;
     text-align: center;
     align-items: center;
-
 }
-.Rectangle4 > form{
+form{
     width: 738px;
     height: 459px;
     background: #FFFFFF;
@@ -221,6 +233,8 @@ form > input{
     display: flex;
     /* margin: 0px 18px 18px 0px; */
 }
+/*---------------------------------------------------------------    Footer     -----------------------------------------------------------------*/
+
 footer{
     width: 100%;
     height: 76px;
@@ -236,7 +250,44 @@ footer > img{
     grid-column: 1;
     margin-left: 50%; 
 }
+/*--------------------------------------------------------------- Formulario PopUp --------------------------------------------------------------*/
 
+.caja_popup {
+	display: none;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1003;
+    width: 738px;
+}
+.Rectangle4_pop{
+    border-radius: 10px;
+    height: 460px;
+    background: #F3F3F3;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+}
+.nav-toggle_cerrar_pop{
+    display: block;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    width: 43px;
+    height: 43px;
+    background-color: #FFF;
+    border: none; 
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.54);
+}
+.nav-toggle_cerrar_pop > img{
+    filter: opacity(0.54) drop-shadow(0 0 0 black); 
+}
+/*---------------------------------------------------------------- MediaQueries ---------------------------------------------------------------*/
 
 @media (max-width: 769px) {
     header{
@@ -327,25 +378,34 @@ footer > img{
         
     }
     main{
-        margin-top: 0px;
+        margin-top: 30px;
     }
     main > .cards-container{
         overflow: hidden;
-        min-width: 100vw;
+        width: 100%;
         height: 400px;
-        transform: translateX(0);
-        transition: transform 0.3s ease-out;
         display: inline-flex;
-        cursor: grab;
         justify-content: center;
         align-items: center;
-        scrollbar-width: none;
-        will-change: transform;
-        position: relative;
+        top: 520px;
+        left: 0px;
+        position: absolute;
+
+    }
+    .slider{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        pointer-events: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        /* transition: 0s ease-in; */
     }
     .card{
-        transition: transform 0.3s ease-in-out;
-        min-width: 205px;
+        pointer-events: none;
+        width: 205px;
         height: 300px;
         margin-left: 40px;
         background-color: #FFFFFF;
@@ -354,19 +414,17 @@ footer > img{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        user-select: none;
-        overflow: hidden;
+        margin-top: 50px;
     }
     .card > div{
         width: 126px;
-        position: absolute;
-        
     }
     .card > p{
-        height: 87px;   
+        height: 87px;
+        
     }
     .Rectangle2{ 
-        margin-top: 0px; 
+        margin-top: 400px; 
         width: 234px;
         height: 234px;
         background-image:url(./Rectangle2.svg);
@@ -378,6 +436,7 @@ footer > img{
     main > p{ 
         width:60%;
         height: 300px;
+        text-align: center;
     }
     .Rectangle4 > form {
         width: 80%;
@@ -393,7 +452,6 @@ footer > img{
     footer > img{
         margin-left: 0;
     }
-   
   }
 
   @media (max-width: 426px) {
@@ -401,15 +459,16 @@ footer > img{
   .nav-menu > .Empty-button-white_1{
     margin-top: 10px; 
     margin-left: 0px;
-    margin-bottom: ;
-
     }
-    .lorem > p{
-        margin-top: 25%; 
-        width:50%;
+    .Rectangle2{
+        margin-right: 320px;
+    }
+    main > p{
+        margin-right: 12%;
     }
 }
 
+/*-------------------------------------------------------------    Funciones     -----------------------------------------------------------------*/
 
 .nav-menu_visible{
         left: 15%;
@@ -427,6 +486,8 @@ footer > img{
 	background-color: rgba(0,0,0, 0.5);
 	z-index:1001;
 }
+
+/*---------------------------------------------------------------    Clases     ------------------------------------------------------------------*/
 
 .grabbing .card {
     @media (max-width: 769px) {
