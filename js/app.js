@@ -55,6 +55,8 @@ container.addEventListener('mousemove', (e)=> {
     checkboundary()
 
 })
+/*--------------------------------------------------------------   Mobile   ----------------------------------------------------------------------*/
+
 container.addEventListener('touchstart', (e) => {
   pressed = true;
   startx = e.targetTouches[0].clientX - slider.offsetLeft;

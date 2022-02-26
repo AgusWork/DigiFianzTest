@@ -53,14 +53,13 @@ nav > img{
     grid-column: 2;
     display: flex;
 }
-.nav-menu > .nav-menu-item > p{
+.nav-menu > .nav-menu-item > li{
     margin-right: 30px;
-    font-family: 'Lato', sans-serif;
-    font-family: 'Montagu Slab', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 13px;
     line-height: 15px;
+    list-style:none;
 }
 .nav-menu > .Empty-button-white_1{
     color: #FFFFFF;
@@ -154,14 +153,14 @@ main > .cards-container{
     height: 87px;   
     margin: 40px 40px 0px 40px;
 }
-.label{
+section{
     display: flex;
     justify-content: center;
     text-align: left;
     align-items: center;
     flex-direction: row;
 }
-.label > p{
+section > p{
     font-size: 13px;
     line-height: 15px;
     width: 530px;
@@ -241,8 +240,8 @@ form > input{
     border: none;
     color: #8A8A8A;
     display: flex;
-    /* margin: 0px 18px 18px 0px; */
 }
+
 /*---------------------------------------------------------------    Footer     -----------------------------------------------------------------*/
 
 footer{
@@ -352,14 +351,16 @@ footer > img{
         flex-direction: column;
         text-align: center;
         align-items: center;
+        justify-content: space-around;
         display: flex;
         margin-top: 20%;
+        height: 120px;
     }
-    .nav-menu > .nav-menu-item > p{
-        margin-right: 0px;
+    .nav-menu > .nav-menu-item > li{
         color: #FFF;
         font-size: 13px;
         line-height: 15px;
+        margin-bottom:;
     }
     .nav-menu > .Empty-button-white_1{
         margin-top: 10px; 
@@ -432,7 +433,7 @@ footer > img{
     .card > p{
         height: 87px;   
     }
-    .label{
+    section{
         margin-top: 400px; 
         flex-direction: column;
         text-align: center;
@@ -447,7 +448,7 @@ footer > img{
         border-radius: 181px;
         margin-bottom: 50px;
     }
-    .label > p{ 
+    section > p{ 
         width:60%;
         height: 300px;
         text-align: center;
